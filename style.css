@@ -3,7 +3,8 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 .iphone-pro .div {
@@ -15,20 +16,22 @@
 
 .iphone-pro .rectangle {
   position: absolute;
-  width: 339px;
+  width: 639px;
   height: 61px;
-  top: 497px;
-  left: 29px;
+  top: 910px;
+  left: -120px;
   background-color: #3f3e3e;
   border-radius: 30px;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .iphone-pro .overlap-group {
   position: absolute;
-  width: 138px;
-  height: 132px;
-  top: 637px;
-  left: 129px;
+  width: 338px;
+  height: 332px;
+  top: 1037px;
+  left: 29px;
   background-color: #410000;
   border-radius: 69px/66px;
 }
@@ -37,16 +40,18 @@
   position: absolute;
   width: 95px;
   height: 97px;
-  top: 16px;
-  left: 21px;
+  top: 110px;
+  left: 125px;
   object-fit: cover;
 }
 
 .iphone-pro .rectangle-2 {
   position: absolute;
-  width: 344px;
-  height: 427px;
+  width: 48rem;
+  height: 50rem;
   top: 26px;
-  left: 24px;
+  left: -186px;
   background-color: #1a3618;
+  color: red;
+  font-size: 6rem;
 }

@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="iphone-pro">
+      <div class="div">
+        <input class="rectangle" type="text" id="dniInput" placeholder="Número y letra del DNI"></input>
+            
+
+        <div class="overlap-group" onclick="verificarDNI()"><img class="pngwing" src="img/pngwing-1.png" /></div>
+        <div class="rectangle-2"><p id="resultado"></p>-</div>
+      </div>
+    </div>
+  </body>
+</html>
+
+    <script>
+        function verificarDNI() {
+            // Obtener el valor del input
+            var dniConLetra = document.getElementById('dniInput').value.toUpperCase();
+
+            // Extraer el número y la letra del DNI
+            var dniNumero = dniConLetra.slice(0, -1);
+            var letraIngresada = dniConLetra.slice(-1);
+
+            // Verificar si el DNI tiene 8 dígitos numéricos
+            if (dniNumero.length !== 8 || isNaN(dniNumero)) {
+                mostrarResultado("El DNI debe tener 8 dígitos numéricos.");
+                return;
+            }
+
+            // Calcular la letra del DNI
+            var letras = 'TRWAGMYFPDXBNJZSQVHLCKE';
+            var letraCalculada = letras.charAt(dniNumero % 23);
+
+            // Comparar la letra calculada con la ingresada
+            if (letraCalculada !== letraIngresada) {
+                mostrarResultado("La letra del DNI no es válida.");
+                return;
+            }
+
+            // Obtener los dos dígitos del año y convertirlos a un número
+            var yearDigits = parseInt(dniNumero.substring(0, 2), 10);
+
+            // Ajustar el año de nacimiento asumiendo que una persona no puede tener más de 100 años
+            var currentYear = new Date().getFullYear();
+            var adjustedYear = (yearDigits <= currentYear % 100) ? 2000 + yearDigits : 1900 + yearDigits;
+
+            // Calcular la edad
+            var age = currentYear - adjustedYear;
+
+            // Mostrar el resultado con la edad
+            if (age >= 18) {
+                mostrarResultado("El DNI es válido y la persona es mayor de edad.");
+            } else {
+                mostrarResultado("El DNI es válido, pero la persona es menor de edad.");
+            }
+        }
+
+        function mostrarResultado(mensaje) {
+            document.getElementById('resultado').innerText = mensaje;
+        }
+    </script>
+
+</body>
+</html>

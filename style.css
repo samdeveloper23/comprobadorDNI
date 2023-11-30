@@ -1,0 +1,52 @@
+.iphone-pro {
+  background-color: #150f0f;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.iphone-pro .div {
+  background-color: #150f0f;
+  width: 393px;
+  height: 852px;
+  position: relative;
+}
+
+.iphone-pro .rectangle {
+  position: absolute;
+  width: 339px;
+  height: 61px;
+  top: 497px;
+  left: 29px;
+  background-color: #3f3e3e;
+  border-radius: 30px;
+}
+
+.iphone-pro .overlap-group {
+  position: absolute;
+  width: 138px;
+  height: 132px;
+  top: 637px;
+  left: 129px;
+  background-color: #410000;
+  border-radius: 69px/66px;
+}
+
+.iphone-pro .pngwing {
+  position: absolute;
+  width: 95px;
+  height: 97px;
+  top: 16px;
+  left: 21px;
+  object-fit: cover;
+}
+
+.iphone-pro .rectangle-2 {
+  position: absolute;
+  width: 344px;
+  height: 427px;
+  top: 26px;
+  left: 24px;
+  background-color: #1a3618;
+}
